@@ -1,0 +1,31 @@
+#navbar{
+    background-color: rgb(22, 20, 20);
+}
+#warna{
+    background: rgb(42, 185, 173);
+}
+.navbar a:hover {
+    background-color: rgb(241, 71, 71);
+    border-radius: 7%;
+}
+#titleformat{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* -webkit-text-stroke: 1.5px black;     */
+}
+#navbartext{
+    color: white;  
+}
+#normaltext{
+    color: white;
+    font-size: 20px;
+    font-family:sans-serif;
+}
+#boxlocation{
+    border: 2px solid;
+    /* box-sizing: border-box; */
+}
+#reservationtitle{
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
