@@ -64,20 +64,21 @@
       <td><?php 
         echo $_POST["phonenumber"];
       ?></td>
-      <td>
+      <td><ul class="list-group")>
         <?php 
         if(isset($_POST["addservice1"])){
-        echo ("Health Protocol <br>");
+        echo ("<li>Health Protocol <br></li>");
       }if(isset($_POST["addservice2"])){
-        echo ("Driver <br>");
+        echo ("<li>Driver <br></li>");
       }if(isset($_POST["addservice3"])){
-        echo ("Fuel Filled <br>");
+        echo ("<li>Fuel Filled <br></li>");
       }if(empty($_POST["addservice1"]) && empty($_POST["addservice2"]) && empty($_POST["addservice3"])){
         echo ("No services");
       }
       
       ?>
       </td>
+      </ul>
       <td>
       <?php 
       $mobil = $_POST["pilihmobil"];
