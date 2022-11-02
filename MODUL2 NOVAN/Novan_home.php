@@ -30,7 +30,7 @@
   </h1>
   <h3><br>❗❗ CHOOSE OUR FINEST CARS HERE ❗❗</h3>
   </center>
-  <form action="Novan_booking.php" >
+  <form action="Novan_booking.php" method="POST" >
   <div class="row row-cols-1 row-cols-md-3 g-3">
         <div class="col">
           <div class="card">
