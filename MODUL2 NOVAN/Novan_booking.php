@@ -51,14 +51,14 @@
 
     
         <h5>Nama</h5>
-        <form action="Novan_mybooking.php" method="post">
+        <form action="Novan_mybooking.php" >
         <input class="form-control" name="namanim" type="text" value="NOVAN_1202201382" aria-label="Disabled input example" readonly >
         <br><h5>Tanggal</h5>
         <input class="form-control" type="date" placeholder="DD/MM/YYYY" aria-label="default input example" name="datepesan">
         <br><h5>Start Time</h5>
         <input class="form-control" type="time" placeholder="--:--" aria-label="default input example" id="jampinjam" name="jampinjam">
         <br><h5>Duration (Days)</h5>
-        <input class="form-control" type="number" id="durasihari" name="durasihari">
+        <input class="form-control" type="number" id="durasihari" name="DURAsI">
         <br><h5>Car Type</h5>
         <select class="form-select" aria-label="Default select example" name="pilihmobil">
         <?php
