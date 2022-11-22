@@ -14,20 +14,20 @@
         $result = mysqli_query($conn, "SELECT * FROM datamobil WHERE id_mobil=$id");
         $data = mysqli_fetch_assoc($result);
     ?>
-        <div class="title-form">
-            <h1>
-                <b>Detail mobil:</b>
-            </h1>
-            <p><?= $data['nama_mobil'] ?></p>
-        </div>
-        <div class="grid">
-            <div>
-                <img src="asset/<?= $data['foto_mobil'] ?>" alt="">
-            </div>
+<section>
+    <div class="container text-justify" style="margin-top:5%">
+    <div class="row">
+    <div class="col">
+    <h1>Detail mobil:</h1>
+    <p><?= $data['nama_mobil'] ?></p>
+        <img style="width:500px;padding-top:30px" src="asset/<?= $data['foto_mobil'] ?>" alt="">
+    </div>
+    <div class="col">
+    <fieldset disabled="disabled">
     <form method="post">
     <div class="mb-3">
   <label for="NamaMobil" class="form-label">
-    <h5>Nama Mobil</h5>
+    <br><h5>Nama Mobil</h5>
   </label>
   <input type="text" class="form-control" value="<?=$data['nama_mobil']?>" name="NamaMobil" id="NamaMobil" placeholder="super-gt">
 </div>
@@ -53,16 +53,14 @@
   <label for="Deskripsi" class="form-label">
     <h5>Deskripsi</h5>
   </label>
-  <textarea  class="form-control" id="Deskripsi" value="<?=$data['deskripsi']?>" name="Deskripsi" style="height:200px" placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-   It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."></textarea>
+  <textarea  class="form-control" id="Deskripsi" value="" name="Deskripsi" style="height:200px"><?php echo $data['deskripsi'] ?></textarea>
 </div>
     <div class="mb-3">
   <label for="foto" class="form-label">
   <h5>Foto</h5>
   </label>
-    <input class="form-control" type="file" value="" id="foto" name="foto">
+    <input class="form-control" type="file" value="<?=$data['foto_mobil']?>" id="foto" name="foto">
+    <p>current car image: <b> <?=$data['foto_mobil']?> </b></p>
 </div>
     <h5>Status Pembayaran</h5>
     <div class="form-check form-check-inline">
@@ -74,12 +72,15 @@
   <label class="form-check-label" for="inlineRadio2">Belum Lunas</label>
 </div>
 <br><br>
+</fieldset>
   <a class="btn btn-primary booking-cta" href="index.php?page=edit&id=<?= $data['id_mobil'] ?>" name="submit" style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 30px">
         edit
-      </a>                    
+      </a>
+    </div>                 
     </form>
-        </div>
-
+    </div>
+  </div>
+</section>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
 </html>

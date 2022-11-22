@@ -17,33 +17,42 @@
   <p>
     List Show Novan - 1202201382
   </p>
-  <br><br>
-<div class="title-form">
-  <br><br>
-    <div class="containerCard">
+    <div class="container text-center">
+    <div class="row row-cols-3">
         <?php
-            include_once("config/connector.php");
-
+            include("config/connector.php");
             $result = mysqli_query($conn, 'SELECT * FROM datamobil');
             if ($result) {
-                while ($selects = mysqli_fetch_array($result)) {
+                while ($select = mysqli_fetch_array($result)) {
             ?>
-                    <div class="card">
-                        <img src="Asset/<?php echo $selects['foto_mobil']; ?>" class="card-img-top img-card" alt="...">
+                    <div class="col">
+                    <div class="card" style="width:300px;margin-top:30px">
+                        <img style="height:200px" src="asset/<?php echo $select['foto_mobil']; ?>" class="card-img-top img-card" alt="...">
                         <div class="card-body">
-                        <h5 class="card-title"><?php echo $selects['nama_mobil'] ?></h5>
-                        <p class="card-text"><?php echo $selects['deskripsi'] ?></p>
-                        <div class="bg-light btn-container">
-                            <a href="index.php?page=detail&id=<?= $selects['id_mobil'] ?>" class="btn btn-primary rounded-pill">Detail</a>
-                            <a href="config/delete.php?id=<?= $selects['id_mobil'] ?>" class="btn btn-danger rounded-pill">Delete</a>
+                        <h5 class="card-title"><?php echo $select['nama_mobil'] ?></h5>
+                        <p class="card-text">
+                          <?php 
+                            if (strlen($select['deskripsi'])>21){
+                              echo substr($select['deskripsi'],0,21) . "...";
+                            }
+                            else {
+                              echo $select['deskripsi'];
+                            }
+                            ?>
+                        </p>
+                        <div class="btn-container">
+                            <a href="index.php?page=detail&id=<?= $select['id_mobil'] ?>" class="btn btn-primary rounded-pill">Detail</a>
+                            <a href="config/delete.php?id=<?= $select['id_mobil'] ?>" class="btn btn-danger rounded-pill">Delete</a>
+                        </div>    
                         </div>
-                        </div>
-                </div>
+                  </div>
+                  </div>
         <?php
                 }
             }
         ?>
-    </div>
+      </div>
+      </div>
   </section>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>

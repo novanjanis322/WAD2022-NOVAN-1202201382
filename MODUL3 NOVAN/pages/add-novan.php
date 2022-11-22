@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add mobil</title>
-    <link rel="stylesheet" href="web.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   </head>
   <body>
@@ -58,16 +57,16 @@
   <label for="foto" class="form-label">
   <h5>Foto</h5>
   </label>
-    <input class="form-control" type="file" id="foto" name="File" >
+    <input class="form-control" type="file" id="foto" name="File">
 </div>
     <h5>Status Pembayaran</h5>
     <div class="form-check form-check-inline">
   <input class="form-check-input" type="radio" name="status" id="lunas" value="Lunas">
-  <label class="form-check-label" for="inlineRadio1">Lunas</label>
+  <label class="form-check-label" for="lunas">Lunas</label>
 </div>
     <div class="form-check form-check-inline">
   <input class="form-check-input" type="radio" name="status" id="belumlunas" value="Belum Lunas">
-  <label class="form-check-label" for="inlineRadio2">Belum Lunas</label>
+  <label class="form-check-label" for="belumlunas">Belum Lunas</label>
 </div>
 <br><br>
   <button class="btn btn-primary" name="submit" type="submit" style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 30px">

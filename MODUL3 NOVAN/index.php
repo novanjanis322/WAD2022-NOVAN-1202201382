@@ -12,9 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>indexmodul3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Style/style1.css">
-
 </head>
 <body>
 <section id="navbar" class="sticky-top bg-primary" style="padding-bottom: 10px;padding-top: 10px">
@@ -34,6 +31,12 @@
         MyCar
       </a>
     </li>
+    <li style="margin-left:auto;margin-right:350px">
+  <a href="<?php echo "index.php?page=additem";?>">
+    <button class="btn btn-light" type="button">
+        Add Car
+      </button></a>
+  </li>
   </ul>
   </section>
 
@@ -49,7 +52,11 @@
                 include "pages/edit-novan.php";
                 break;
             default:
-                echo "<center><h5>Maaf. Halaman yang anda cari tidak di temukan !</h5></center>";
+                echo "<center>
+                <h5>
+                Not Found !!
+                </h5>
+                </center>";
                 break;
             }
         } else if (isset($_GET['page'])) {
@@ -62,7 +69,7 @@
                     include "pages/add-novan.php";
                     break;
                 default:
-                    echo "<center><h5>Maaf. Halaman yang anda cari tidak di temukan !</h5></center>";
+                    echo "<center><h5>Not Found !!</h5></center>";
                     break;
             }
         }

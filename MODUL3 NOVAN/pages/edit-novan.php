@@ -14,18 +14,18 @@
         $data = mysqli_fetch_assoc($result);
     ?>
 <section>
-        <div class="title-form">
-            <h1>Edit <b><?= $data['nama_mobil'] ?></b></h1>
-            <p>Edit mobil ini</p>
+        <div class="container text-justify" style="margin-top:5%">
+        <div class="row">
+        <div class="col">
+        <h1>Edit <?= $data['nama_mobil'] ?></h1>
+        <p>Edit mobil ini</p>
+            <img style="width:500px;padding-top:30px" src="asset/<?= $data['foto_mobil'] ?>" alt="">
         </div>
-        <div class="grid">
-            <div>
-                <img src="asset/<?= $data['foto_mobil'] ?>" alt="">
-            </div>
+        <div class="col">
             <form action="config/edit.php" enctype="multipart/form-data" method="post">                    
                 <div class="mb-3">
             <label for="NamaMobil" class="form-label">
-                <h5>Nama Mobil</h5>
+                <br><h5>Nama Mobil</h5>
             </label>
             <input type="text" class="form-control" value="<?=$data['nama_mobil']?>" name="NamaMobil" id="NamaMobil" placeholder="super-gt">
             </div>
@@ -51,32 +51,28 @@
             <label for="Deskripsi" class="form-label">
                 <h5>Deskripsi</h5>
             </label>
-            <textarea  class="form-control" id="Deskripsi" value="<?=$data['deskripsi']?>" name="Deskripsi" style="height:200px" placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."></textarea>
+            <textarea  class="form-control" id="Deskripsi" value="" name="Deskripsi" style="height:200px" ><?=$data['deskripsi']?></textarea>
             </div>
                 <div class="mb-3">
             <label for="foto" class="form-label">
             <h5>Foto</h5>
             </label>
-                <input class="form-control" type="file" value="" id="foto" name="foto">
+                <input class="form-control" type="file" value="" id="foto" name="File">
             </div>
                 <h5>Status Pembayaran</h5>
                 <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" value="" name="lunas" id="lunas" value="Lunas" checked>
-            <label class="form-check-label" for="inlineRadio1">Lunas</label>
+            <input class="form-check-input" type="radio" name="status" id="lunas" value="Lunas" checked>
+            <label class="form-check-label" for="lunas">Lunas</label>
             </div>
                 <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="belumlunas" id="belumlunas" value="Belum Lunas">
-            <label class="form-check-label" for="inlineRadio2">Belum Lunas</label>
+            <input class="form-check-input" type="radio" name="status" id="belumlunas" value="Belum Lunas">
+            <label class="form-check-label" for="belumlunas">Belum Lunas</label>
             </div>
             <br><br>
             <input class="btn btn-primary booking-cta" name="edit" type="submit" value="save" style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 30px">
             <input type="hidden" name="id" value="<?= $data['id_mobil'] ?>">      
             </form>
         </div>
-
     </section>
     
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
