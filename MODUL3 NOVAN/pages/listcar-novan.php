@@ -1,6 +1,4 @@
-<?php
-  include('config/connector.php')
-?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,7 +18,7 @@
     <div class="container text-center">
     <div class="row row-cols-3">
         <?php
-            include("config/conector.php");
+            include ('config/connector.php');
             $result = mysqli_query($conn, 'SELECT * FROM datamobil');
             if ($result) {
                 while ($select = mysqli_fetch_array($result)) {
