@@ -20,7 +20,7 @@
     <div class="container text-center">
     <div class="row row-cols-3">
         <?php
-            include("config/connector.php");
+            include("config/conector.php");
             $result = mysqli_query($conn, 'SELECT * FROM datamobil');
             if ($result) {
                 while ($select = mysqli_fetch_array($result)) {
