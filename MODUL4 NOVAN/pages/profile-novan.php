@@ -30,7 +30,7 @@
                 <div class="mb-3 row">
                     <label for="displaynomorhp" class="col-sm-2 col-form-label">nomor hp<a style="color:red">*</a></label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="displaynomorhp" id="displaynomorhp" value="<?php echo $_COOKIE['nomorhp']; ?>" >
+                        <input type="text" class="form-control" name="displaynomorhp" id="displaynomorhp" value="<?php echo $_COOKIE['no_hp']; ?>" >
                     </div>
                 </div>
             </div>

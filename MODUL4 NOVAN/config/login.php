@@ -15,6 +15,7 @@
 
         setcookie('email', $email, time()+86400*30, '/');
         setcookie('nama', $ambildata['nama'], time()+86400*30, '/');
+        setcookie('no_hp', $ambildata['no_hp'], time()+86400*30, '/');
         header('location: ../index.php');
 
     }else{

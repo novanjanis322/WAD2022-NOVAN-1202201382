@@ -3,9 +3,6 @@ include('config/connector.php');
 $query = "SELECT * FROM datamobil";
 $result = mysqli_query($conn, $query);
 global $result;
-include('config/connector-user.php');
-$query2 = "SELECT * FROM user_novan";
-$result2 = mysqli_query($conn_user, $query);
 ?>
 <style>
   #hide {
