@@ -3,11 +3,13 @@ include('config/connector.php');
 $query = "SELECT * FROM datamobil";
 $result = mysqli_query($conn, $query);
 global $result;
+
 ?>
 <style>
   #hide {
     display: none
   }
+  
 </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +25,8 @@ global $result;
 </head>
 
 <body>
-  <section id="navbar" class="sticky-top bg-primary" style="padding-bottom: 10px;padding-top: 10px">
+  
+  <section id="<?= isset($_GET['page']) && in_array($_GET['page'], ['register', 'login']) ? 'hide' : '' ?>" class="sticky-top bg-<?= isset($_COOKIE['navwarna']) ? $_COOKIE['navwarna'] : 'primary' ?>" primary" style="padding-bottom: 10px;padding-top: 10px">
     <nav>
       <ul class="nav" id="">
         <li class="nav-item" style="margin-left: 100px">

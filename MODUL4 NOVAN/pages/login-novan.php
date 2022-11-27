@@ -18,11 +18,11 @@
                 <div class="mb-3">
                     <h2>Login</h2>
                     <label for="email" class="form-label">Email address<a style="color:red">*</a></label>
-                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" required>
+                    <input type="email" class="form-control" name="email" value="<?= isset($_COOKIE['email']) ? $_COOKIE['email'] : '' ?>" id="email" aria-describedby="emailHelp" required>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password<a style="color:red">*</a></label>
-                    <input type="password" class="form-control" name="password" id="password" required>
+                    <input type="password" class="form-control" name="password" value="<?= isset($_COOKIE['password']) ? $_COOKIE['password'] :'' ?>" id="password" required>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" name="remember" type="checkbox" value="remember" id="remember">

@@ -25,8 +25,8 @@
                     <input type="text" class="form-control" name="nama" id="nama">
                 </div>
                 <div class="mb-3">
-                    <label for="nomorhp" class="form-label">nomor hp<a style="color:red">*</a></label>
-                    <input type="text" class="form-control" name="nomorhp" id="nomorhp" required>
+                    <label for="no_hp" class="form-label">nomor hp<a style="color:red">*</a></label>
+                    <input type="text" class="form-control" name="no_hp" id="no_hp" required>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password<a style="color:red">*</a></label>
