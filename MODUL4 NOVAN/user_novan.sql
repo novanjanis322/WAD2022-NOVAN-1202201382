@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2022 at 12:16 PM
+-- Generation Time: Nov 30, 2022 at 02:11 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -40,9 +40,10 @@ CREATE TABLE `user_novan` (
 --
 
 INSERT INTO `user_novan` (`id`, `nama`, `email`, `password`, `no_hp`) VALUES
-(2, 'novan-13823', 'novangfc@gmail.com', '123', '08100810'),
+(2, 'nopan', 'novangfc@gmail.com', '123', '08100810'),
 (3, 'novan', 'novantest@lol.com', '1234', '08080808080'),
-(7, 'kappa', 'kap@123.com', '12345', '121212');
+(7, 'kappa', 'kap@123.com', '12345', '121212'),
+(9, 'nopaaaaaan', 'novan@123.com', '123', '012345');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +63,7 @@ ALTER TABLE `user_novan`
 -- AUTO_INCREMENT for table `user_novan`
 --
 ALTER TABLE `user_novan`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
