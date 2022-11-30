@@ -16,7 +16,7 @@
   <div id="halamanawal">
   <div class="container text-center">
   <div class="row" style="margin-top:170px">
-    <div class="col" style="text-align:justify;margin-left: ">
+    <div class="col" style="text-align:justify;margin-left:">
       <h1>
         Selamat Datang Di <br> 
         Show Room Novan
