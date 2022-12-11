@@ -51,6 +51,16 @@ class ShowroomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function detailcar($id)
+    {
+        $detail = Showroom::where ('id',$id)->get();
+        return view('pages.detail-novan',['detail' => $detail]);
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function read()
     {
         $showrooms = Showroom::all();
@@ -87,7 +97,7 @@ class ShowroomController extends Controller
      */
     public function show($id)
     {
-        //
+       
     }
 
     /**
@@ -98,7 +108,9 @@ class ShowroomController extends Controller
      */
     public function edit($id)
     {
-        //
+        $detail = Showroom::where ('id',$id)->get();
+        return view('pages.edit-novan',['detail' => $detail]);
+        
     }
 
     /**
@@ -110,7 +122,24 @@ class ShowroomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $showrooms = Showroom::all();
+        $update = Showroom::find($id);
+
+        if ($request->foto) {
+            $foto_baru = $request->foto->getClientOriginalName();
+            $request->foto->move(public_path('asset'), $foto_baru);
+        } else {
+            $foto_baru = $update->image;
+        }
+        $update->name = $request->NamaMobil;
+        $update->owner = $request->NamaPemilik;
+        $update->brand = $request->Merek;
+        $update->purchase_date = $request->Tanggal;
+        $update->description = $request->Deskripsi;
+        $update->image = $foto_baru;
+        $update->status = $request->status;
+        $update->save();
+        return view('pages.listcar-novan',['showrooms' => $showrooms]);     
     }
 
     /**
@@ -121,6 +150,9 @@ class ShowroomController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = Showroom::where ('id',$id)->delete();
+        $showrooms = Showroom::all();
+        return view('pages.listcar-novan',['showrooms' => $showrooms]);
     }
+
 }

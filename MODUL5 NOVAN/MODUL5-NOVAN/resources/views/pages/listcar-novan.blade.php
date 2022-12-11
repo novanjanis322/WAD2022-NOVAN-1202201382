@@ -23,12 +23,12 @@
 
             <div class="col">
                 <div class='card' style="width:300px;margin-top:30px;overflow:hidden">
-                    <img src='{{"asset/$data->image"}}' alt='' width="100%"  height="180px">
+                    <img src='{{"/asset/$data->image"}}' alt='' width="100%"  height="180px">
                     <div class="card-body">
                     <h5 class='card-title'>{{$data->name}}</h5>
                     <p class=''>{{strlen($data->description) > 21 ? substr($data->description, 0, 21).'...' : $data->description}}</p>
                     <div class='btn-container'>
-                        <a href='/detail/{{$data->id}}' type="button" class='btn rounded-pill btn-primary'>Detail</a>
+                        <a href='/detailcar/{{$data->id}}' type="button" class='btn rounded-pill btn-primary'>Detail</a>
                         <a href='/delete/{{$data->id}}' class='btn rounded-pill btn-danger'>Delete</a>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
     <h5>
       <?php
       echo 'jumlah mobil : ' ;
-      ?>{{$data->count();}}
+      ?>{{$showrooms->count();}}
     </h5>
   </section>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

@@ -8,7 +8,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a id="" class="nav-link text-white text-opacity-75" href="read">
+          <a id="" class="nav-link text-white text-opacity-75" href="/read">
             MyCar
           </a>
         </li>
@@ -19,17 +19,17 @@
             </button></a>
         </li>
         <li style="margin-right:60px">
-          <a id="" href="/login">
+          <!-- <a id="" href="/login">
             <button class="btn btn-primary" type="button">
               Login
-            </button></a>
+            </button></a> -->
         </li>
         <li style="margin-right:60px">
         <div id="">
           <a id="" href="">
             <div class="dropdown">
               <a class="btn btn-light text-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                
+                NOVAN - 1202201382
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="">Profile</a></li>

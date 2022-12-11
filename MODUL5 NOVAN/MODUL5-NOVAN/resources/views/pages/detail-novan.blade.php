@@ -9,14 +9,17 @@
 </head>
 
 <body>
-  <!--  -->
+  @include('layouts.navbar')
+  <?php
+  $image = $detail[0]['image'];
+  ?>
   <section>
     <div class="container text-justify" style="margin-top:5%">
       <div class="row">
         <div class="col">
           <h1>Detail mobil:</h1>
           <p></p>
-          <img style="width:500px;padding-top:30px" src="asset/" alt="">
+          <img style="width:500px;padding-top:30px" src='{{"/asset/$image"}}' alt="">
         </div>
         <div class="col">
           <fieldset disabled="disabled">
@@ -26,51 +29,51 @@
                   <br>
                   <h5>Nama Mobil</h5>
                 </label>
-                <input type="text" class="form-control" value="" name="NamaMobil" id="NamaMobil" placeholder="super-gt">
+                <input type="text" class="form-control" value="{{$detail[0]['name']}}" name="NamaMobil" id="NamaMobil" placeholder="super-gt">
               </div>
               <div class="mb-3">
                 <label for="NamaPemilik" class="form-label">
                   <h5>Nama Pemilik</h5>
                 </label>
-                <input type="text" class="form-control" value=" ?>" name="NamaPemilik" id="NamaPemilik" placeholder="Novan - 1202201382">
+                <input type="text" class="form-control" value="{{$detail[0]['owner']}}" name="NamaPemilik" id="NamaPemilik" placeholder="Novan - 1202201382">
               </div>
               <div class="mb-3">
                 <label for="Merek" class="form-label">
                   <h5>Merek</h5>
                 </label>
-                <input type="text" class="form-control" value="" name="Merek" id="Merek" placeholder="Super Car">
+                <input type="text" class="form-control" value="{{$detail[0]['brand']}}" name="Merek" id="Merek" placeholder="Super Car">
               </div>
               <div class="mb-3">
                 <label for="Tanggal" class="form-label">
                   <h5>Tanggal beli</h5>
                 </label>
-                <input type="date" class="form-control" value="" id="Tanggal" name="Tanggal">
+                <input type="date" class="form-control" value="{{$detail[0]['purchase_date']}}" id="Tanggal" name="Tanggal">
               </div>
               <div class="mb-3">
                 <label for="Deskripsi" class="form-label">
                   <h5>Deskripsi</h5>
                 </label>
-                <textarea class="form-control" id="Deskripsi" value="" name="Deskripsi" style="height:200px"></textarea>
+                <textarea class="form-control" id="Deskripsi" name="Deskripsi" style="height:200px">{{$detail[0]['description']}}</textarea>
               </div>
               <div class="mb-3">
                 <label for="foto" class="form-label">
                   <h5>Foto</h5>
                 </label>
                 <input class="form-control" type="file" value="" id="foto" name="foto">
-                <p>current car image: <b>  </b></p>
+                <p>current car image: <b>{{$detail[0]['image']}}</b></p>
               </div>
               <h5>Status Pembayaran</h5>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" value="" name="lunas" id="lunas" value="Lunas" checked>
+                <input class="form-check-input" type="radio" value="{{$detail[0]['status']}}" name="status" id="lunas" value="Lunas" checked>
                 <label class="form-check-label" for="inlineRadio1">Lunas</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="belumlunas" id="belumlunas" value="Belum Lunas">
+                <input class="form-check-input" type="radio" name="status" id="belumlunas" value="Belum-Lunas">
                 <label class="form-check-label" for="inlineRadio2">Belum Lunas</label>
               </div>
               <br><br>
           </fieldset>
-          <a class="btn btn-primary booking-cta" href="index.php?page=edit&id=name="submit" style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 30px">
+          <a class="btn btn-primary booking-cta" href="/edit/{{$detail[0]['id']}}" type="submit" style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 30px">
             edit
           </a>
         </div>
